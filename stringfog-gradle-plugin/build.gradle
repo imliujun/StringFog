@@ -1,8 +1,7 @@
 apply plugin: 'java-library'
 apply plugin: 'groovy'
-apply plugin: 'com.github.dcendents.android-maven'
 
-group='com.github.imliujun'
+group = 'com.github.imliujun'
 
 dependencies {
     implementation gradleApi()
@@ -36,7 +35,7 @@ tasks.withType(Jar) {
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
-apply from: '../maven_local.gradle'
+//apply from: '../maven_local.gradle'
 
 // The following is used for mavenCentral publish.
-// apply from: '../maven_nexus.gradle'
+ apply from: '../maven_nexus.gradle'
