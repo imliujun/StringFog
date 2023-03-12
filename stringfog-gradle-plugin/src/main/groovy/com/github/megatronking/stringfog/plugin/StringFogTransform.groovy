@@ -25,7 +25,6 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.DomainObjectSet
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.gradle.internal.FileUtils
 
 abstract class StringFogTransform extends Transform {
 
@@ -156,6 +155,7 @@ abstract class StringFogTransform extends Transform {
                             File fileOutput = new File(fileInput.getAbsolutePath().replace(
                                     dirInput.file.getAbsolutePath(), dirOutput.getAbsolutePath()))
                             FileUtils.mkdirs(fileOutput.parentFile)
+                            org.apache.tools.ant.util.FileUtils
                             Status fileStatus = entry.getValue()
                             switch(fileStatus) {
                                 case Status.ADDED:

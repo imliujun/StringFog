@@ -1,13 +1,16 @@
 apply plugin: 'java-library'
 apply plugin: 'groovy'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.imliujun'
 
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    implementation 'com.android.tools.build:gradle:7.4.0'
+    implementation 'com.android.tools.build:gradle:7.4.2'
     implementation 'org.ow2.asm:asm:9.2'
-    implementation 'com.squareup:javapoet:1.10.0'
-    implementation project(':stringfog-interface')
+    implementation 'com.squareup:javapoet:1.13.0'
+    implementation("com.google.guava:guava:31.1-jre")
     implementation project(':stringfog-interface')
 }
 

@@ -1,6 +1,10 @@
 apply plugin: 'maven-publish'
 
 publishing {
+    // 配置maven 仓库
+    repositories { RepositoryHandler handler->
+        handler.mavenLocal()  // 发布到默认的 本地maven 仓库 ，路径： USER_HOME/.m2/repository/
+    }
     publications {
         StringFogPlugin(MavenPublication) {
             from components.java

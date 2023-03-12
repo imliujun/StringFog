@@ -16,8 +16,7 @@ package com.github.megatronking.stringfog.plugin;
 
 import com.github.megatronking.stringfog.plugin.utils.Log;
 import com.github.megatronking.stringfog.plugin.utils.TextUtils;
-
-import org.apache.commons.io.IOUtils;
+import com.google.common.io.Files;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -90,7 +89,11 @@ import java.io.IOException;
 
     /* package */ void endMappingOutput() {
         if (mWriter != null) {
-            IOUtils.closeQuietly(mWriter);
+            try {
+                mWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
